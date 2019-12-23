@@ -1,3 +1,11 @@
+lot-SBC (0.8.3) unstable; urgency=medium
+
+  * API: Set default argument
+  * API: Add checking if pin is available
+    Pin mux was not considered completely.
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Tue, 24 Dec 2019 00:36:57 +0900
+
 lot-SBC (0.8.2) unstable; urgency=medium
 
   * API: Remove infinite loop in Log::error
