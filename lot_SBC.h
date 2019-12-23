@@ -23,9 +23,12 @@
 
 #include "lot-API/lot_def.h"
 
+#define MAX_PHY_PIN_COUNT 40
+#define MAX_LOT_PIN_COUNT 36
+
 namespace lot
 {
-const pin_size_t phy_to_lot[41] = {
+const pin_size_t phy_to_lot[MAX_PHY_PIN_COUNT + 1] = {
     // clang-format off
      UNUSED,
      UNUSED, UNUSED,   // 1   | 2
@@ -51,7 +54,7 @@ const pin_size_t phy_to_lot[41] = {
     // clang-format on
 };
 
-const pin_size_t lot_to_phy[36] = {
+const pin_size_t lot_to_phy[MAX_LOT_PIN_COUNT] = {
     // clang-format off
      UNUSED, UNUSED,   // |
      UNUSED, UNUSED,   // |
@@ -71,6 +74,29 @@ const pin_size_t lot_to_phy[36] = {
      UNUSED, UNUSED,   // |
      UNUSED, UNUSED,   // |
      UNUSED, UNUSED    // |
+    // clang-format on
+};
+
+const bool is_available_lot[MAX_LOT_PIN_COUNT] = {
+    // clang-format off
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false,   // |
+     false, false    // |
     // clang-format on
 };
 }    // namespace lot

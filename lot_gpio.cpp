@@ -27,6 +27,33 @@ namespace lot
 {
 lot_mode_t lot_mode;
 
+static inline pin_size_t get_lot_pin_available( pin_size_t pin )
+{
+    if( lot_mode == PHY )
+    {
+        if( pin <= MAX_PHY_PIN_COUNT )
+        {
+            pin = phy_to_lot[pin];
+        }
+        else
+        {
+            pin = UNUSED;
+            return pin;
+        }
+    }
+
+    if( pin < MAX_LOT_PIN_COUNT )
+    {
+        if( is_available_lot[pin] )
+        {
+            return pin;
+        }
+    }
+
+    pin = UNUSED;
+    return pin;
+}
+
 void init( lot_mode_t mode )
 {
     lot_mode = mode;
@@ -35,85 +62,121 @@ void init( lot_mode_t mode )
 
 void set_pin_mode( pin_size_t pin, pin_mode_t mode )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in set_pin_mode()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 pin_mode_t get_pin_mode( pin_size_t pin )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in get_pin_mode()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 void set_pin_pull_up_down( pin_size_t pin, pud_mode_t pud )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in set_pin_pull_up_down()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 pud_mode_t get_pin_pull_up_down( pin_size_t pin )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in get_pin_pull_up_down()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 void set_pin_speed( pin_size_t pin, uint32_t speed )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in set_pin_speed()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 uint32_t get_pin_speed( pin_size_t pin )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in get_pin_speed()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 void set_pin_drive( pin_size_t pin, uint32_t drive )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in set_pin_drive()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 uint32_t get_pin_drive( pin_size_t pin )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in get_pin_drive()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 void digital_write( pin_size_t pin, pin_status_t status )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in digital_write()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 pin_status_t digital_read( pin_size_t pin )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in digital_read()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 void analog_write( pin_size_t pin, uint32_t value )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in analog_write()." );
+        exit( EXIT_FAILURE );
     }
 }
 
 uint32_t analog_read( pin_size_t pin )
 {
-    if( lot_mode == PHY )
+    pin = get_lot_pin_available( pin );
+    if( pin == UNUSED )
     {
+        Log::error( "Used unavailable pin in analog_read()." );
+        exit( EXIT_FAILURE );
     }
 }
 }    // namespace lot
