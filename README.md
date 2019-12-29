@@ -9,7 +9,7 @@ git clone https://github.com/loliot/lot-SBC.git
 Change **lot-SBC** to **lot-\<your board\>** in `debian/*` and Doxyfile.
 Make the board name a combination of lowercase letters and hyphens.
 
-Rewrite README.md. 
+Rewrite README.md.
 
 ```bash
 git remote rename origin lot-SBC &&\
@@ -23,12 +23,10 @@ git push -f -u origin master
 
 Pin mapping is based on the pinouts of the datasheet.
 
-### LOT
+### LOT & PHY
 
 Set port group numbers in alphabetical order.  
 Set pin numbers by the combination of the port group numbers and pin numbers in the ports.
-
-### PHY
 
 Set the pin numbers in physical order.
 
@@ -84,5 +82,5 @@ INCS_DIR = .\
 ## Code formatting
 
 ```bash
-$ make clang
+make clang
 ```
