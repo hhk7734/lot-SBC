@@ -21,8 +21,8 @@
  * SOFTWARE.
  */
 
-#include "Spi.h"
-#include "lot.h"
+#include "../Spi.h"
+#include "../lot.h"
 
 #include <unistd.h>    // close()
 #include <fcntl.h>     // open()
