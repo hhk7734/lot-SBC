@@ -1,3 +1,11 @@
+lot-SBC (0.9.0) unstable; urgency=medium
+
+  * API: Add INFO log level
+  * API: Move *_linux.cpp into linux directory
+  * API: Prevent reopen when already open
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Sun, 29 Dec 2019 13:29:54 +0900
+
 lot-SBC (0.8.3) unstable; urgency=medium
 
   * API: Set default argument
