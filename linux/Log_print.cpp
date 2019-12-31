@@ -23,9 +23,16 @@
 
 #include "lot-API/Log.h"
 
+#include <stdio.h>
+
 namespace lot
 {
-void Log::print( const char *str )
+void Log::print( log_level_t level, const char *fmt, va_list args )
 {
+    if( m_log_level <= level )
+    {
+        printf( "%s", m_log_msg[static_cast<int>( level )] );
+        vprintf( fmt, args );
+    }
 }
 }    // namespace lot
