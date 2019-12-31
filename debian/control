@@ -9,5 +9,5 @@ Homepage: https://github.com/loliot/lot-SBC
 Package: lot-SBC
 Architecture: arm64 armhf
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, pkg-config
 Description: GPIO development library for lot-SBC
