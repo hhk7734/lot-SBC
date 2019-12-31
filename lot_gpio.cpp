@@ -27,7 +27,8 @@ namespace lot
 {
 lot_mode_t lot_mode;
 
-static inline pin_size_t get_lot_pin_available( pin_size_t pin )
+static inline pin_size_t get_lot_pin_available( pin_size_t  pin,
+                                                const char *func_name )
 {
     if( lot_mode == PHY )
     {
@@ -38,7 +39,6 @@ static inline pin_size_t get_lot_pin_available( pin_size_t pin )
         else
         {
             pin = UNUSED;
-            return pin;
         }
     }
 
@@ -50,7 +50,7 @@ static inline pin_size_t get_lot_pin_available( pin_size_t pin )
         }
     }
 
-    pin = UNUSED;
+    Log::error( "Used unavailable pin in %s.\r\n", func_name );
     return pin;
 }
 
@@ -62,121 +62,67 @@ void init( lot_mode_t mode )
 
 void set_pin_mode( pin_size_t pin, pin_mode_t mode )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in set_pin_mode()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
 }
 
 pin_mode_t get_pin_mode( pin_size_t pin )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in get_pin_mode()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    return static_cast<pin_mode_t>( -1 );
 }
 
 void set_pin_pull_up_down( pin_size_t pin, pud_mode_t pud )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in set_pin_pull_up_down()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
 }
 
 pud_mode_t get_pin_pull_up_down( pin_size_t pin )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in get_pin_pull_up_down()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    return static_cast<pud_mode_t>( -1 );
 }
 
 void set_pin_speed( pin_size_t pin, uint32_t speed )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in set_pin_speed()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
 }
 
 uint32_t get_pin_speed( pin_size_t pin )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in get_pin_speed()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    return static_cast<uint32_t>( -1 );
 }
 
 void set_pin_drive( pin_size_t pin, uint32_t drive )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in set_pin_drive()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
 }
 
 uint32_t get_pin_drive( pin_size_t pin )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in get_pin_drive()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    return static_cast<uint32_t>( -1 );
 }
 
 void digital_write( pin_size_t pin, pin_status_t status )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in digital_write()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
 }
 
 pin_status_t digital_read( pin_size_t pin )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in digital_read()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    return static_cast<pin_status_t>( -1 );
 }
 
 void analog_write( pin_size_t pin, uint32_t value )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in analog_write()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
 }
 
 uint32_t analog_read( pin_size_t pin )
 {
-    pin = get_lot_pin_available( pin );
-    if( pin == UNUSED )
-    {
-        Log::error( "Used unavailable pin in analog_read()." );
-        exit( EXIT_FAILURE );
-    }
+    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    return static_cast<uint32_t>( -1 );
 }
 }    // namespace lot
