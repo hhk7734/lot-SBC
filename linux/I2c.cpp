@@ -32,6 +32,7 @@
 #include <stdlib.h>       // malloc(), free()
 #include <string.h>       // strcpy(), memcpy()
 #include <errno.h>        // errno
+#include <stdexcept>
 
 namespace lot
 {
@@ -64,8 +65,8 @@ void I2c::init( uint32_t clock )
     m_fd = open( m_device, O_RDWR );
     if( m_fd < 0 )
     {
-        Log::error(
-            "Failed to open %s.\r\n\t%s\r\n", m_device, strerror( errno ) );
+        Log::error( "Failed to open %s.\r\n", m_device );
+        throw std::runtime_error( strerror( errno ) );
     }
 }
 

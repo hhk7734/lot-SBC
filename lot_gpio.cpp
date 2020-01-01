@@ -23,6 +23,8 @@
 
 #include "lot.h"
 
+#include <stdexcept>
+
 namespace lot
 {
 lot_mode_t lot_mode;
@@ -50,8 +52,8 @@ static inline pin_size_t get_lot_pin_available( pin_size_t  pin,
         }
     }
 
-    Log::error( "Used unavailable pin in %s.\r\n", func_name );
-    return pin;
+    Log::error( "Used unavailable pin %d in %s.\r\n", pin, func_name );
+    throw std::invalid_argument( "Check pin number and functions." );
 }
 
 void init( lot_mode_t mode )
