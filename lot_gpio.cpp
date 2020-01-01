@@ -60,6 +60,31 @@ void init( lot_mode_t mode )
     lot_time_init();
 }
 
+pin_size_t get_lot_pin_available( pin_size_t pin )
+{
+    if( lot_mode == PHY )
+    {
+        if( pin <= MAX_PHY_PIN_COUNT )
+        {
+            pin = phy_to_lot[pin];
+        }
+        else
+        {
+            return UNUSED;
+        }
+    }
+
+    if( pin < MAX_LOT_PIN_COUNT )
+    {
+        if( is_available_lot[pin] )
+        {
+            return pin;
+        }
+    }
+
+    return UNUSED;
+}
+
 void set_pin_mode( pin_size_t pin, pin_mode_t mode )
 {
     Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
