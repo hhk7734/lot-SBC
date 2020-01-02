@@ -72,7 +72,7 @@ static inline pin_size_t get_lot_pin_available( pin_size_t  pin,
         }
     }
 
-    Log::error( "Used unavailable pin %d in %s.\r\n", pin, func_name );
+    Log::error( "Used unavailable pin %d in %s().\r\n", pin, func_name );
     throw std::invalid_argument( "Check pin number and functions." );
 }
 
@@ -109,73 +109,73 @@ pin_size_t get_lot_pin_available( pin_size_t pin )
 
 void set_pin_mode( pin_size_t pin, pin_mode_t mode )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 pin_mode_t get_pin_mode( pin_size_t pin )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 void set_pin_pull_up_down( pin_size_t pin, pud_mode_t pud )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 pud_mode_t get_pin_pull_up_down( pin_size_t pin )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 void set_pin_speed( pin_size_t pin, uint32_t speed )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 uint32_t get_pin_speed( pin_size_t pin )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 void set_pin_drive( pin_size_t pin, uint32_t drive )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 uint32_t get_pin_drive( pin_size_t pin )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 void digital_write( pin_size_t pin, pin_status_t status )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 pin_status_t digital_read( pin_size_t pin )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 void analog_write( pin_size_t pin, uint32_t value )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
 uint32_t analog_read( pin_size_t pin )
 {
-    Log::error( "%s is not supported or not implemented yet.\r\n", __func__ );
+    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 }    // namespace lot
