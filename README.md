@@ -21,30 +21,23 @@ git push -f -u origin master
 
 ## Pin mapping
 
-Pin mapping is based on the pinouts of the datasheet.
+Pin mapping is based on physical pinout of board.
 
-### LOT & PHY
-
-Set port group numbers in alphabetical order.  
-Set pin numbers by the combination of the port group numbers and pin numbers in the ports.
-
-Set the pin numbers in physical order.
-
-#### Example
+### Example
 
 In case using an 8-bit processor and using PA3, PA4, PC0, PC2, PD1, and PD4.
 
-Set port A, C, and D numbers to 0, 8, and 16, respectively.
+Set port A, C, and D numbers to 0, 16, and 32, respectively.
 
 Set PA3 and PA4 to 3(0+3) and 4(0+4).  
-Set PC0 and PC2 to 8(8+0) and 10(8+2).  
-Set PD1 and PD4 to 17(16+1) and 20(16+4).
+Set PC0 and PC2 to 16(16+0) and 18(16+2).  
+Set PD1 and PD4 to 33(32+1) and 36(32+4).
 
 ```bash
 |     | LOT |  PHY  | LOT |     |
 | PA3 |   3 | 1 | 2 |   4 | PA4 |
-| PD4 |  20 | 3 | 4 |   8 | PC0 |
-| PC2 |  10 | 5 | 6 |  17 | PD1 |
+| PD4 |  36 | 3 | 4 |  16 | PC0 |
+| PC2 |  18 | 5 | 6 |  33 | PD1 |
 ```
 
 ## Structure
@@ -55,7 +48,7 @@ lot-<your borad>
 │   ├── II2c.h
 │   ├── ISpi.h
 │   ├── IUart.h
-│   ├── lot_def.h
+│   ├── lotdef.h
 │   ├── lot_gpio.h
 │   ├── lot_time.h
 │   └── ...
