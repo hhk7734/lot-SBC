@@ -103,18 +103,6 @@ pud_mode_t get_pin_pull_up_down( int pin )
     throw unsupported_error( __func__ );
 }
 
-void set_pin_speed( int pin, uint32_t speed )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
-
-uint32_t get_pin_speed( int pin )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
-
 void set_pin_drive( int pin, uint32_t drive )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
