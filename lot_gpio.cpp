@@ -47,22 +47,13 @@ public:
     }
 };
 
-static inline int get_lot_pin_available( int pin, const char *func_name )
+static inline int get_gpio_available( int pin, const char *func_name )
 {
-    if( pin <= MAX_PHY_PIN_COUNT )
+    if( pin <= LAST_PHY_PIN )
     {
-        pin = phy_to_lot[pin];
-    }
-    else
-    {
-        pin = UNUSED;
-    }
-
-    if( pin < MAX_LOT_PIN_COUNT )
-    {
-        if( is_available_lot[pin] )
+        if( is_available_phy[pin] )
         {
-            return pin;
+            return phy_to_gpio[pin];
         }
     }
 
@@ -75,22 +66,13 @@ void init( void )
     lot_time_init();
 }
 
-int get_lot_pin_available( int pin )
+int get_gpio_available( int pin )
 {
-    if( pin <= MAX_PHY_PIN_COUNT )
+    if( pin <= LAST_PHY_PIN )
     {
-        pin = phy_to_lot[pin];
-    }
-    else
-    {
-        return UNUSED;
-    }
-
-    if( pin < MAX_LOT_PIN_COUNT )
-    {
-        if( is_available_lot[pin] )
+        if( is_available_phy[pin] )
         {
-            return pin;
+            return phy_to_gpio[pin];
         }
     }
 
