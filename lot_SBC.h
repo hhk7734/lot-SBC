@@ -23,12 +23,11 @@
 
 #include "lot-API/lotdef.h"
 
-#define MAX_PHY_PIN_COUNT 40
-#define MAX_LOT_PIN_COUNT 36
-
 namespace lot
 {
-const int phy_to_lot[MAX_PHY_PIN_COUNT + 1] = {
+constexpr int LAST_PHY_PIN = 40;
+
+const int phy_to_gpio[LAST_PHY_PIN + 1] = {
     // clang-format off
      UNUSED,
      UNUSED, UNUSED,   // 1   | 2
@@ -54,49 +53,29 @@ const int phy_to_lot[MAX_PHY_PIN_COUNT + 1] = {
     // clang-format on
 };
 
-const int lot_to_phy[MAX_LOT_PIN_COUNT] = {
+const bool is_available_phy[LAST_PHY_PIN + 1] = {
     // clang-format off
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED,   // |
-     UNUSED, UNUSED    // |
-    // clang-format on
-};
-
-const bool is_available_lot[MAX_LOT_PIN_COUNT] = {
-    // clang-format off
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false,   // |
-     false, false    // |
+     false,
+     false, false,   // 1   | 2
+     false, false,   // 3   | 4
+     false, false,   // 5   | 6
+     false, false,   // 7   | 8
+     false, false,   // 9   | 10
+     false, false,   // 11  | 12
+     false, false,   // 13  | 14
+     false, false,   // 15  | 16
+     false, false,   // 17  | 18
+     false, false,   // 19  | 20
+     false, false,   // 21  | 22
+     false, false,   // 23  | 24
+     false, false,   // 25  | 26
+     false, false,   // 27  | 28
+     false, false,   // 29  | 30
+     false, false,   // 31  | 32
+     false, false,   // 33  | 34
+     false, false,   // 35  | 36
+     false, false,   // 37  | 38
+     false, false    // 39  | 40
     // clang-format on
 };
 }    // namespace lot
