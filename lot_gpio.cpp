@@ -27,95 +27,108 @@
 
 namespace lot
 {
-static inline int gpio_available( int pin, const char *func_name )
+namespace gpio
 {
-    if( pin <= LAST_PHY_PIN )
+    static inline int gpio_available( int pin, const char *func_name )
     {
-        if( is_available_phy[pin] )
+        if( pin <= LAST_PHY_PIN )
         {
-            return phy_to_gpio[pin];
+            if( is_available_phy[pin] )
+            {
+                return phy_to_gpio[pin];
+            }
         }
+
+        Log::error( "Used unavailable pin %d in %s().\r\n", pin, func_name );
+        throw std::invalid_argument( "Check pin number and functions." );
     }
 
-    Log::error( "Used unavailable pin %d in %s().\r\n", pin, func_name );
-    throw std::invalid_argument( "Check pin number and functions." );
-}
-
-void init( void )
-{
-    lot_time_init();
-}
-
-int gpio_available( int pin )
-{
-    if( pin <= LAST_PHY_PIN )
+    void init( void )
     {
-        if( is_available_phy[pin] )
-        {
-            return phy_to_gpio[pin];
-        }
+        lot_time_init();
     }
 
-    return UNUSED;
-}
+    int gpio_available( int pin )
+    {
+        if( pin <= LAST_PHY_PIN )
+        {
+            if( is_available_phy[pin] )
+            {
+                return phy_to_gpio[pin];
+            }
+        }
 
-void pin_mode( int pin, pin_mode_t mode )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+        return UNUSED;
+    }
 
-pin_mode_t pin_mode( int pin )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    void mode( int pin, pin_mode_t pin_mode )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-void pin_pull_up_down( int pin, pud_mode_t pud )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    pin_mode_t mode( int pin )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-pud_mode_t pin_pull_up_down( int pin )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    void pull_up_down( int pin, pud_mode_t pud )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-void pin_drive( int pin, uint32_t drive )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    pud_mode_t pull_up_down( int pin )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-uint32_t pin_drive( int pin )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    void drive( int pin, uint32_t pin_drive )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-void digital( int pin, int status )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    uint32_t drive( int pin )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-int digital( int pin )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    void digital( int pin, int status )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-void analog( int pin, int value )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    int digital( int pin )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
 
-int analog( int pin )
-{
-    Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
-    throw unsupported_error( __func__ );
-}
+    void analog( int pin, int value )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
+
+    int analog( int pin )
+    {
+        Log::error( "%s() is not supported or not implemented yet.\r\n",
+                    __func__ );
+        throw unsupported_error( __func__ );
+    }
+}    // namespace gpio
 }    // namespace lot
