@@ -27,8 +27,6 @@
 
 namespace lot
 {
-lot_mode_t lot_mode;
-
 class unsupported_error : public std::exception
 {
 private:
@@ -49,19 +47,15 @@ public:
     }
 };
 
-static inline pin_size_t get_lot_pin_available( pin_size_t  pin,
-                                                const char *func_name )
+static inline int get_lot_pin_available( int pin, const char *func_name )
 {
-    if( lot_mode == PHY )
+    if( pin <= MAX_PHY_PIN_COUNT )
     {
-        if( pin <= MAX_PHY_PIN_COUNT )
-        {
-            pin = phy_to_lot[pin];
-        }
-        else
-        {
-            pin = UNUSED;
-        }
+        pin = phy_to_lot[pin];
+    }
+    else
+    {
+        pin = UNUSED;
     }
 
     if( pin < MAX_LOT_PIN_COUNT )
@@ -76,24 +70,20 @@ static inline pin_size_t get_lot_pin_available( pin_size_t  pin,
     throw std::invalid_argument( "Check pin number and functions." );
 }
 
-void init( lot_mode_t mode )
+void init( void )
 {
-    lot_mode = mode;
     lot_time_init();
 }
 
-pin_size_t get_lot_pin_available( pin_size_t pin )
+int get_lot_pin_available( int pin )
 {
-    if( lot_mode == PHY )
+    if( pin <= MAX_PHY_PIN_COUNT )
     {
-        if( pin <= MAX_PHY_PIN_COUNT )
-        {
-            pin = phy_to_lot[pin];
-        }
-        else
-        {
-            return UNUSED;
-        }
+        pin = phy_to_lot[pin];
+    }
+    else
+    {
+        return UNUSED;
     }
 
     if( pin < MAX_LOT_PIN_COUNT )
@@ -107,73 +97,73 @@ pin_size_t get_lot_pin_available( pin_size_t pin )
     return UNUSED;
 }
 
-void set_pin_mode( pin_size_t pin, pin_mode_t mode )
+void set_pin_mode( int pin, pin_mode_t mode )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-pin_mode_t get_pin_mode( pin_size_t pin )
+pin_mode_t get_pin_mode( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void set_pin_pull_up_down( pin_size_t pin, pud_mode_t pud )
+void set_pin_pull_up_down( int pin, pud_mode_t pud )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-pud_mode_t get_pin_pull_up_down( pin_size_t pin )
+pud_mode_t get_pin_pull_up_down( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void set_pin_speed( pin_size_t pin, uint32_t speed )
+void set_pin_speed( int pin, uint32_t speed )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-uint32_t get_pin_speed( pin_size_t pin )
+uint32_t get_pin_speed( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void set_pin_drive( pin_size_t pin, uint32_t drive )
+void set_pin_drive( int pin, uint32_t drive )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-uint32_t get_pin_drive( pin_size_t pin )
+uint32_t get_pin_drive( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void digital_write( pin_size_t pin, pin_status_t status )
+void digital_write( int pin, int status )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-pin_status_t digital_read( pin_size_t pin )
+int digital_read( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void analog_write( pin_size_t pin, uint32_t value )
+void analog_write( int pin, int value )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-uint32_t analog_read( pin_size_t pin )
+int analog_read( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
