@@ -33,6 +33,7 @@ CXXSRCS = \
 	lot-API/Log.cpp \
 	lot-API/lot_ios.cpp \
 	lot-API/lot_ostream.cpp \
+	common/I2c.cpp \
 	common/Spi.cpp \
 	lot_gpio.cpp \
 
