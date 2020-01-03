@@ -1,3 +1,16 @@
+lot-SBC (0.11.0) unstable; urgency=medium
+
+  * API: Refactor type definition
+  * API: Update license
+  * API: Remove LOT mode variables
+  * API: Remove set/get_pin_speed
+  * API: Remove set_, get_, _write, _read
+  * API: Move GPIO functions into gpio namespace
+  * API: Implement Gpio class
+  * API: Add xx_stoi, xx_itos in lotdef.h
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Fri, 03 Jan 2020 23:14:16 +0900
+
 lot-SBC (0.10.0) unstable; urgency=medium
 
   * API: Fix debian install error
