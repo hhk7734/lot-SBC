@@ -29,26 +29,11 @@ namespace lot
 {
 namespace gpio
 {
-    static inline int gpio_available( int pin, const char *func_name )
-    {
-        if( pin <= LAST_PHY_PIN )
-        {
-            if( is_available_phy[pin] )
-            {
-                return phy_to_gpio[pin];
-            }
-        }
-
-        Log::error( "Used unavailable pin %d in %s().\r\n", pin, func_name );
-        throw std::invalid_argument( "Check pin number and functions." );
-    }
-
     void init( void )
     {
-        lot_time_init();
     }
 
-    int gpio_available( int pin )
+    int gpio( int pin )
     {
         if( pin <= LAST_PHY_PIN )
         {
