@@ -47,7 +47,7 @@ public:
     }
 };
 
-static inline int get_gpio_available( int pin, const char *func_name )
+static inline int gpio_available( int pin, const char *func_name )
 {
     if( pin <= LAST_PHY_PIN )
     {
@@ -66,7 +66,7 @@ void init( void )
     lot_time_init();
 }
 
-int get_gpio_available( int pin )
+int gpio_available( int pin )
 {
     if( pin <= LAST_PHY_PIN )
     {
@@ -79,61 +79,61 @@ int get_gpio_available( int pin )
     return UNUSED;
 }
 
-void set_pin_mode( int pin, pin_mode_t mode )
+void pin_mode( int pin, pin_mode_t mode )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-pin_mode_t get_pin_mode( int pin )
+pin_mode_t pin_mode( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void set_pin_pull_up_down( int pin, pud_mode_t pud )
+void pin_pull_up_down( int pin, pud_mode_t pud )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-pud_mode_t get_pin_pull_up_down( int pin )
+pud_mode_t pin_pull_up_down( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void set_pin_drive( int pin, uint32_t drive )
+void pin_drive( int pin, uint32_t drive )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-uint32_t get_pin_drive( int pin )
+uint32_t pin_drive( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void digital_write( int pin, int status )
+void digital( int pin, int status )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-int digital_read( int pin )
+int digital( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-void analog_write( int pin, int value )
+void analog( int pin, int value )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
 }
 
-int analog_read( int pin )
+int analog( int pin )
 {
     Log::error( "%s() is not supported or not implemented yet.\r\n", __func__ );
     throw unsupported_error( __func__ );
