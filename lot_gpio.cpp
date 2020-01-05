@@ -33,19 +33,6 @@ namespace gpio
     {
     }
 
-    int gpio( int pin )
-    {
-        if( pin <= LAST_PHY_PIN )
-        {
-            if( is_available_phy[pin] )
-            {
-                return phy_to_gpio[pin];
-            }
-        }
-
-        return UNUSED;
-    }
-
     void mode( int pin, pin_mode_t pin_mode )
     {
         Log::error( "%s() is not supported or not implemented yet.\r\n",
