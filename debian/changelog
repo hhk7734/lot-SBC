@@ -1,3 +1,11 @@
+lot-SBC (0.11.1) unstable; urgency=medium
+
+  * API: Add PWM pin_mode_t
+  * API: Use Gpio.digital instead of gpio::digital
+  * API: Remove gpio()
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Sun, 05 Jan 2020 23:19:52 +0900
+
 lot-SBC (0.11.0) unstable; urgency=medium
 
   * API: Refactor type definition
