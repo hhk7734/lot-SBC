@@ -1,3 +1,9 @@
+lot-SBC (0.11.2) unstable; urgency=medium
+
+  * API: Fix bug where mode() does not set m_mode
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Mon, 06 Jan 2020 17:12:55 +0900
+
 lot-SBC (0.11.1) unstable; urgency=medium
 
   * API: Add PWM pin_mode_t
