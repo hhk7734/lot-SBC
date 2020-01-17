@@ -5,8 +5,6 @@
 
 int main( int argc, char *argv[] )
 {
-    lot::init_time();
-
     int pin = 13;
 
     if( argc > 1 )
