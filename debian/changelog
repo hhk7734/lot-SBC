@@ -1,3 +1,11 @@
+lot-SBC (0.11.4) unstable; urgency=medium
+
+  * API: Refactor Gpio class
+  * API: Update docs
+  * API: Change type of 'start_millis/micros' to 'std::atomic'
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Fri, 17 Jan 2020 16:58:03 +0900
+
 lot-SBC (0.11.3) unstable; urgency=medium
 
   * API: Move typedef into loddef.h
