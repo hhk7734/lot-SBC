@@ -1,3 +1,10 @@
+lot-SBC (0.12.0) unstable; urgency=medium
+
+  * API: Correct parameter order
+  * API: Move init() to constructor
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Sat, 18 Jan 2020 01:42:46 +0900
+
 lot-SBC (0.11.4) unstable; urgency=medium
 
   * API: Refactor Gpio class
