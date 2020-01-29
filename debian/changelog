@@ -1,3 +1,12 @@
+lot-SBC (0.12.2) unstable; urgency=medium
+
+  * API: Add virtual destructor
+  * API: Add override keyword
+  * API: Move functions using cs_pin into ISpi.hpp
+  * API: Add using-declaration to introduce members of IGpio
+
+ -- Hyeonki Hong <hhk7734@gmail.com>  Wed, 29 Jan 2020 14:54:28 +0900
+
 lot-SBC (0.12.1) unstable; urgency=medium
 
   * API: Use -O2 instead of -O1 and remove -g
