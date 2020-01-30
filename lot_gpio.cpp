@@ -33,28 +33,28 @@ namespace gpio
     {
     }
 
-    void mode( int pin, pin_mode_t pin_mode )
+    void mode( int pin, GpioMode pin_mode )
     {
         Log::error( "%s() is not supported or not implemented yet.\r\n",
                     __func__ );
         throw unsupported_error( __func__ );
     }
 
-    pin_mode_t mode( int pin )
+    GpioMode mode( int pin )
     {
         Log::error( "%s() is not supported or not implemented yet.\r\n",
                     __func__ );
         throw unsupported_error( __func__ );
     }
 
-    void pull_up_down( int pin, pud_mode_t pud )
+    void pull_up_down( int pin, PUDMode pud )
     {
         Log::error( "%s() is not supported or not implemented yet.\r\n",
                     __func__ );
         throw unsupported_error( __func__ );
     }
 
-    pud_mode_t pull_up_down( int pin )
+    PUDMode pull_up_down( int pin )
     {
         Log::error( "%s() is not supported or not implemented yet.\r\n",
                     __func__ );
